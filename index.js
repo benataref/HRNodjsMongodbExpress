@@ -21,10 +21,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/Departments', DepartmentsRoutes);
-app.use('/api/candidates', candidateRoutes);
+app.use('/candidates', candidateRoutes);
 app.use('/companies', companyRoutes);
-app.use('/api/employees', employeeRoutes);
-app.use('/api/salaries', salaryRoutes);
+app.use('/employees', employeeRoutes);
+app.use('/salaries', salaryRoutes);
 app.get("/", (req, res) => {
     res.send("<h1>Hello from Node.js app</h1>");
 });

@@ -21,10 +21,10 @@ router.post("/", (req, res, next)=>{
 
     const data=new Salary({
        // _id: new mongoose.Types.ObjectId(),
-       amount: req.body. amount,
-       effectiveDate: req.body.effectiveDate,
-       GrossSalary: req.body. GrossSalary,
-       NetSalary: req.body.  NetSalary,
+       amount:req.body.amount,
+       effectiveDate:req.body.effectiveDate,
+       GrossSalary:req.body.GrossSalary,
+       NetSalary:req.body.NetSalary,
     });
     data.save()
     .then(result=>{
@@ -58,7 +58,10 @@ router.get('/:_id',(req, res, next)=>{
 router.patch("/:_id",(req, res, next)=>{
 const id =req.params._id;
 const updateOps={
-    name: req.body.name
+    amount:req.body.amount,
+       effectiveDate:req.body.effectiveDate,
+       GrossSalary:req.body.GrossSalary,
+       NetSalary:req.body.NetSalary,
 };
 /* for(const ops of req.body){
     updateOps[ops.propName]=ops.value;

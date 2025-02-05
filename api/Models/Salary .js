@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const SalarySchema=new mongoose.Schema({
-    amount: Number,
-    effectiveDate: Date,
+    amount:Number,
+    effectiveDate:Date,
     GrossSalary:Number,
     NetSalary:Number
 });
