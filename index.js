@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const DepartmentsRoutes = require('./api/Routes/Departments');
-//const candidateRoutes = require('./routes/candidates');
 const companyRoutes=require('./api/Routes/companies')
 const url = 'mongodb+srv://benataref:Zeyneb32&@cluster0.2b0fu.mongodb.net/HR?retryWrites=true&w=majority&appName=Cluster0'; 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true , serverSelectionTimeoutMS: 30000 })
