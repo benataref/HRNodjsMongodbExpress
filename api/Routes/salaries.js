@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
- const Salary=require('../Models/Salary ');
+ const Salary=require('../Models/Salary');
 router.get('/', (req, res, next)=>{
     Salary.find().exec().then(docs=>{
         console.log(docs);

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
- const Employee=require('../Models/Employee ');
+ const Employee=require('../Models/Employee');
 router.get('/', (req, res, next)=>{
     Employee.find().exec().then(docs=>{
         console.log(docs);
