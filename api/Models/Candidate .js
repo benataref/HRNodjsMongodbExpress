@@ -4,7 +4,7 @@ const CandidateSchema = new mongoose.Schema({
     name: String,
     email: String,
     resume: String,
-    status: { type: String, default: 'applied' },
+    status: String,
 });
 
 module.exports = mongoose.model('Candidate', CandidateSchema);
