@@ -6,7 +6,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const DepartmentsRoutes = require('./api/Routes/Departments');
-const companyRoutes=require('./api/Routes/companies')
+const candidateRoutes=require('./api/Routes/candidates');
+const employeeRoutes=require('./api/Routes/employees');
+const companyRoutes=require('./api/Routes/companies');
+const salaryRoutes=require('./api/Routes/salaries');
+
 const url = 'mongodb+srv://benataref:Zeyneb32&@cluster0.2b0fu.mongodb.net/HR?retryWrites=true&w=majority&appName=Cluster0'; 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true , serverSelectionTimeoutMS: 30000 })
     .then(result => console.log("Database connected"))
@@ -17,11 +21,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/Departments', DepartmentsRoutes);
-//app.use('/api/candidates', candidateRoutes);
+app.use('/api/candidates', candidateRoutes);
 app.use('/companies', companyRoutes);
-// app.use('/api/employees', employeeRoutes);
-// app.use('/api/departments', departmentRoutes);
-// app.use('/api/salaries', salaryRoutes);
+app.use('/api/employees', employeeRoutes);
+app.use('/api/salaries', salaryRoutes);
 app.get("/", (req, res) => {
     res.send("<h1>Hello from Node.js app</h1>");
 });
