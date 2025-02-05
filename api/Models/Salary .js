@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const SalarySchema = new mongoose.Schema({
+const SalarySchema=new mongoose.Schema({
     amount: Number,
     effectiveDate: Date,
     GrossSalary:Number,
