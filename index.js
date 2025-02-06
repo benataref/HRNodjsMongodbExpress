@@ -15,7 +15,11 @@ const url = 'mongodb+srv://benataref:Zeyneb32&@cluster0.2b0fu.mongodb.net/HR?ret
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true , serverSelectionTimeoutMS: 30000 })
     .then(result => console.log("Database connected"))
     .catch(err => console.log(err));  
-    
+    app.use(cors({
+        origin:"https://human-resours-mgm-angular-tugd.vercel.app/",
+        credentials:true
+    }));
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
